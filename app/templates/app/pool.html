@@ -1,0 +1,58 @@
+{% extends "app/layout.html" %}
+{% block content %}
+
+{% if user.is_authenticated %}
+
+    {% if form != None %}
+
+<h2>Форма обратной связи</h2>
+<hr>
+<div class="row">
+    <div class="col-md-8">
+        <form method="post">
+            {% csrf_token %}
+            <label fpr="{{ form.name.id_for_label }}">{{ form.name.label }}:</label>
+            {{ form.name }}<br>
+            <label fpr="{{ form.gender.id_for_label }}">{{ form.gender.label }}:</label>
+            {{ form.gender }}<br>
+            <label fpr="{{ form.country.id_for_label }}">{{ form.country.label }}:</label>
+            {{ form.country }}<br>
+            <label fpr="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+            {{ form.email }}<br>
+            <label fpr="{{ form.message.id_for_label }}">{{ form.message.label }}:</label>
+            {{ form.message }}<br>
+            {{ form.agreement }} <label fpr="{{ form.agreement.id_for_label }}">{{ form.agreement.label }}</label>
+            <br>
+            <input class="btn btn-default" type="submit" value="Отправить" />
+        </form>
+    </div>
+</div>
+    {% else %}
+<h2>Благодарим за предоставленный отзыв</h2>
+<hr>
+<h3>Вы сообщили следующее:</h3>
+<br>
+<div class="row">
+    <div class="col-md-8">
+        <span>Имя:</span> {{ data.name }}<br>
+        <span>Пол:</span> {{ data.gender }}<br>
+        <span>Страна:</span> {{ data.country }}<br>
+        <span>E-mail:</span> {{ data.email }}<br>
+        <span>Соглашение:</span> {{ data.agreement }}<br>
+        <span>Сообщение:</span> {{ data.message }}
+    </div>
+</div>
+    {% endif %}
+{% else %}
+<h2>Форма обратной связи</h2>
+<div class="row">
+    <div class="col-md-8">
+        <form method="post">
+            <br><br><br>
+            <span>Пожалуйста авторизуйтесь или зарегистрируйтесь для продолжения.</span>
+            <br><br><br>
+        </form>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

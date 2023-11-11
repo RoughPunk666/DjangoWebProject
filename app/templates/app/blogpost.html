@@ -1,0 +1,51 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+
+<h2>{{ post_l.title }}</h2>
+<hr>
+
+<div class="row">
+    <div class="col-md-12">
+        {% if post_l.image and post_l.image.url != '/media/temp.png' %}
+        <img class="displayed" src="{{post_l.image.url}}" alt="Картинка" width="960" height="540" style="display: block; margin-left: auto; margin-right: auto" />
+        {% endif %}
+
+        {% if post_l.video and post_l.video.url != '/media/temp.mp4' %}
+        <div>
+            <video class="displayed" src={{post_l.video.url}} controls="controls" alt="Видео" width="960" height="540" style="display: block; margin-left: auto; margin-right: auto" poster="{{post_l.videoposter.url}}" />
+        </div>
+        {% endif %}
+
+        <h3>{{ post_l.content }}</h3>
+        <hr>
+        {% if user.is_authenticated %}
+        <h5>Добавить комментарий</h5>
+        <form method="POST">
+            {% csrf_token %}
+            <div>
+                <p>
+                    <label for="id_text">Коментарий:</label>
+                    <textarea class="form-control" name="text" cols="100" rows="1" required id="id_text"></textarea>
+                </p>
+                <button type="submit" class="save btn btn-primary btn-large"> Отправить комментарий </button>
+            </div>
+        </form>
+        {% else %}
+        <h5> Для добавления своего комментария, пожалуйста, авторизуйтесь </h5>
+        {% endif %}
+        {% for comment in comments %}
+        <div>
+            <hr>
+            <h5 style="color: rgb(248,177,120) "> {{comment.author}} </h5>
+            <p> {{comment.text|linebreaksbr}} </p>
+            <h8 style="color:rgb(128,128,128)"> {{comment.date}} </h8>
+        </div>
+        {% endfor %}
+        <br>
+        <p><a class="btn btn-default" href="{% url 'blog' %}">&laquo; Назад</a></p>
+    </div>
+</div>
+
+{% endblock %}

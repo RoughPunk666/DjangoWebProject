@@ -1,0 +1,156 @@
+﻿{% extends "app/layout.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{% static 'app/content/aboutSF.png' %}" width="228" height="324" />
+        </div>
+        <div class="col-md-8">
+            <h1>Sally Face</h1>
+            <h2>История</h2>
+            <p class="lead">
+                Sally Face - мрачная приключенческая игра о мальчике с протезированным лицом. Сэл использует свою портативную игровую систему,
+                чтобы разговаривать с мертвыми и узнавать их истории. После череды загадочных убийств Сэл и трое его друзей обнаруживают нечто
+                поистине зловещее, бросающее тень на их маленький городок.
+            </p>
+            <h2>Эпизоды</h2>
+            <p class="lead">
+                Всего "Салли Фейс" состоит из пяти серий. Первая серия содержит краткое введение, которое значительно расширяется в последующих сериях.
+            </p>
+        </div>
+        <div class="col-md-1"><p><a href="https://www.djangoproject.com/" class="btn btn-primary btn-large">Узнать больше &raquo;</a></p></div>
+    </div>
+</div>
+<h1>Награды</h1>
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="{% static 'app/content/banners/Baner1.png'%} " alt="Первый слайд" class="img-responsive" />
+            <br><br><br>
+            <div class="carousel-caption" role="option">
+            </div>
+        </div>
+        <div class="item">
+            <img src="{% static 'app/content/banners/Baner2.png'%}" alt="Второй слайд" class="img-responsive" />
+            <br><br><br>
+            <div class="carousel-caption" role="option">
+            </div>
+        </div>
+        <div class="item">
+            <img src=" {% static 'app/content/banners/Baner3.png'%} " alt="Третий слайд" class="img-responsive" />
+            <br><br><br>
+            <div class="carousel-caption" role="option">
+            </div>
+        </div>
+        <div class="item">
+            <img src=" {% static 'app/content/banners/Baner4.png'%} " alt="Третий слайд" class="img-responsive" />
+            <br><br><br>
+            <div class="carousel-caption" role="option">
+            </div>
+        </div>
+        <div class="item">
+            <img src=" {% static 'app/content/banners/Baner5.png'%} " alt="Третий слайд" class="img-responsive" />
+            <br><br><br>
+            <div class="carousel-caption" role="option">
+            </div>
+        </div>
+        <div class="item">
+            <img src=" {% static 'app/content/banners/Baner6.png'%} " alt="Третий слайд" class="img-responsive" />
+            <br><br><br>
+            <div class="carousel-caption" role="option">
+            </div>
+        </div>
+        <div class="item">
+            <img src=" {% static 'app/content/banners/Baner7.png'%} " alt="Третий слайд" class="img-responsive" />
+            <br><br><br>
+            <div class="carousel-caption" role="option">
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1>Итересные материалы</h1>
+<div id="myCarousel2" class="carousel slide" data-ride="carousel" data-interval="2000">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel2" data-slide-to="1"></li>
+        <li data-target="#myCarousel2" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <a href="https://shop.portablemoose.com/">
+                <img src="{% static 'app/content/banners2/banner1.png'%} " alt="Первый слайд" class="img-responsive" />
+            </a>
+            <dir style="background-color: rgba(0,0,0,0.5); position: absolute; right: 0; bottom: -15px; left: 0;  padding-bottom: 10%; color: #fff;">
+                <div class="carousel-caption" role="option">
+                    <p>В этом году также появились отличные новые товары Sally Face. У нас распродажа!</p>
+                </div>
+            </dir>
+        </div>
+        <div class="item">
+            <a href="http://www.strangenightmares.com/">
+                <img src="{% static 'app/content/banners2/banner2.png'%}" alt="Второй слайд" class="img-responsive" />
+            </a>
+            <dir style="background-color: rgba(0,0,0,0.5); position: absolute; right: 0; bottom: -15px; left: 0; padding-bottom: 10%; color: #fff;">
+                <div class="carousel-caption" role="option" >
+                    <p>Это эксклюзивное издание Sally Face: Strange Nightmares для Kickstarter / предварительного заказа. Оно включает в себя все, что есть в розничной продаже игры, только лучше!</p>
+                </div>
+            </dir>   
+        </div>
+        <div class="item">
+            <a href="http://store.steampowered.com/app/541570/">
+                <img src=" {% static 'app/content/banners2/banner3.png'%} " alt="Третий слайд" class="img-responsive" />
+            </a>
+            <dir style="background-color: rgba(0,0,0,0.5); position: absolute; right: 0; bottom: -15px; left: 0; padding-bottom: 10%; color: #fff;">
+                <div class="carousel-caption" role="option">
+                    <p>Погрузитесь в мрачное приключение мальчика с протезом на лице и тяжелым прошлым. Распутайте зловещую тайну истории Салли, чтобы отыскать правду, скрытую завесой тьмы.</p>
+                </div>
+            </dir>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel2" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Начало работы</h2>
+        <p>
+            Django предоставляет вам мощный, основанный на шаблонах способ создания динамических веб-сайтов, который
+            позволяет четко разделить задачи и дает вам полный контроль над разметкой
+            для приятной и гибкой разработки.
+        </p>
+        <p><a class="btn btn-default" href="https://djangobook.com/django-tutorials/">Узнать больше &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Получите больше библиотек</h2>
+        <p>Индекс пакетов Python - это хранилище программного обеспечения для языка программирования Python.</p>
+        <p><a class="btn btn-default" href="https://pypi.org/">Узнать больше &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Microsoft Azure</h2>
+        <p>Вы можете легко опубликовать в Microsoft Azure с помощью Visual Studio. Узнайте, как вы можете разместить свое приложение, воспользовавшись бесплатной пробной версией уже сегодня.</p>
+        <p><a class="btn btn-default" href="http://azure.microsoft.com">Узнать больше &raquo;</a></p>
+    </div>
+</div>
+
+{% endblock %}

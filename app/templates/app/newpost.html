@@ -1,0 +1,43 @@
+{% extends "app/layout.html" %}
+{% include 'app/blog.html' %}
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+<hr>
+<div class="row">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="id_title" class="control-label">Заголовок:</label>
+                <input class="form-control" type="text" name="title" maxlength="100" required id="id_title" />
+            </div>
+            <div class="form-group">
+                <label for="id_discription" class="control-label">Краткое содержание:</label>
+                <textarea class="form-control" name="discription" cols="40" rows="10" required="" id="id_discription"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="id_content" class="control-label">Полное содержание:</label>
+                <textarea class="form-control" name="content" cols="40" rows="10" required="" id="id_content"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="id_image" class="control-label">Картинка:</label>
+                <input class="form-control" type="file" name="image" id="id_image">
+            </div>
+            <div class="form-group">
+                <label for="id_video" class="control-label">Видео:</label>
+                <input class="form-control" type="file" name="video" id="id_video">
+            </div>
+            <div class="form-group">
+                <label for="id_videoposter" class="control-label">Постер видео:</label>
+                <input class="form-control" type="file" name="videoposter" id="id_videoposter">
+            </div>
+            <p>
+                <a class="btn btn btn-default" href="{% url 'blog' %}">&laquo; Назад</a>
+                <button type="submit" class="save btn btn-default">Опубликовать</button>
+            </p>
+        </div>
+    </form>
+</div>
+{% endblock %}

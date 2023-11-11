@@ -1,0 +1,21 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+<hr>
+
+{% if user.is_superuser %}
+    <p style="text-align: right"><a class="btn btn-primary btn-large" href="{% url 'newpost' %}">+ Добавить статью</a></p>
+{% endif %}
+
+{% for post in posts %}
+    <div class="jumbotron">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.discription }}</p>
+        <h5>{{ post.posted }}</h5>
+        <p><a class="btn btn-default" href="{% url 'blogpost' parametr=post.id %}">Читать далее &raquo; </a></p>
+    </div>
+{% endfor %}
+
+{% endblock %}
